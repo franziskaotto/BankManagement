@@ -13,6 +13,8 @@ public class Customer {
     public String toString() {
         return "Name: " + name + ", Age: " + age + ", Address: " + address;
     }
+
+
     public String getName () {
         return name;
     }

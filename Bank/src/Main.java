@@ -3,34 +3,24 @@ import java.util.Scanner;
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
 
-
-    //
-
-
-//    public static main (String[] args) {
-//        return
-//        /*tasks
-//         1. Array anschauen
-//         2. Switch case implementieren
-
-
 //         3. while loops
 //                ICU: initialise, compare, update
+//
 
-    //
-//         */
-    //main gehört in Main! und nicht in dahin wo die constructer liegen!
     public static void main(String[] args) {
         BankManagement bankMgmt = new BankManagement();
 
         String menuText = """
-                ______________________________
+                ___________________________________
                 This is the BankManager-Tool: press
-                A : add Client
+                A : add Client incl new Konto
                 S : show all active Clients
                 R : remove Client
-                O : open up new Konto
+                W : withdraw
+                D : deposit
                 B : show the balance of one client
+                
+                
                 
                 Q : quit Program""";
 
@@ -45,22 +35,22 @@ public class Main {
 
             switch (menuInput) {
                 case "A":
-                    System.out.println("User pressed A");
-                    bankMgmt.addNewCustomer();
-
+                    bankMgmt.addNewCustomer(bankMgmt.createNewCustomer());
                     break;
                 case "S":
-                    System.out.println("User pressed S");
                     bankMgmt.listClients();
                     break;
                 case "R":
                     System.out.println("User pressed R");
                     break;
-                case "O":
-                    System.out.println("User pressed O");
+                case "W":
+                    System.out.println("User pressed W");
+                    break;
+                case "D":
+                    System.out.println("User pressed D");
                     break;
                 case "B":
-                    System.out.println("User pressed B");
+                    bankMgmt.showBalanceForUser();
                     break;
 
 

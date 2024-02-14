@@ -1,13 +1,12 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class BankManagement {
-
+    Scanner scanner = new Scanner(System.in);
     private ArrayList<Customer> customerList;
     private ArrayList<BankAccount> bankAccountList;
-
-    // Constructor to initialize customerList and bankAccountList
-
 
     public BankManagement() {
         this.customerList = new ArrayList<>();
@@ -15,42 +14,76 @@ public class BankManagement {
     }
 
 
-    public Customer addNewCustomer(){
+    public void addNewCustomer(Customer customer){
 
-        Scanner scanner = new Scanner(System.in);
+        customerList.add(customer);
+
+
+        //hier in 2. function auslagern
+
+        int accountNumber = createAccountNumber();
+        System.out.println("start balance: ");
+        double startBalance = scanner.nextDouble();
+        scanner.nextLine();
+
+        BankAccount newAccount = new BankAccount(accountNumber, customer, startBalance);
+        bankAccountList.add(newAccount);
+
+
+    }
+
+    public Customer createNewCustomer() {
         System.out.print("You want to add a new Customer, please enter details: \n name: ");
         String name = scanner.nextLine();
         System.out.print("age: ");
-        int age = scanner.nextByte();
+        int age = scanner.nextInt();
+        scanner.nextLine();
         System.out.print("address: ");
         String address = scanner.nextLine();
 
+
         Customer newCustomer = new Customer(name, age, address);
-        customerList.add(newCustomer);
-
-        System.out.println(newCustomer);
         return newCustomer;
-
     }
+
+
+
+    public int createAccountNumber(){
+        Random randomNumber = new Random();
+        return randomNumber.nextInt(5000); //number in () is the obergrenze zwischen 0 und dem wert
+    }
+
+
 
     public void listClients(){
         for (Customer customer : customerList) {
-            System.out.println(customer);
+            System.out.println(customer); //java.lang.toString method, i overwrote it in Customer.java
         }
+
+        for (BankAccount account : bankAccountList) {
+            System.out.println(account);
+        }
+    }
+
+    public void showBalanceForUser(){
+        for (Customer customer : customerList) {
+            System.out.println(customer.name); //java.lang.toString method, i overwrote it in Customer.java
+        }
+
+        System.out.println("For which client do you want to see the balance? Type here: ");
+        String selectedUser = scanner.nextLine();
+        System.out.println(selectedUser);
+
+        for (BankAccount account : bankAccountList) {
+            if (account.getCustomer().getName().equals(selectedUser)){
+                System.out.println(account.getBalance());
+            }
+        }
+
+
 
     }
 
-
-
-
-        /*
-        here comes the scanner
-        the arrays for new clients
-
-            im bankmanager die arrays als constructor schreiben, den dann in main initialisieren
-
-
-         */
 
     //getters:
     public ArrayList<Customer> getClientList() {

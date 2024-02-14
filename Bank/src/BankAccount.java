@@ -15,6 +15,9 @@ public class BankAccount {
         this.customer = customer;
         this.balance = amount;
     }
+    public String toString() {
+        return "AccountNumber: " + accNumber + ", Customer: " + customer.name + ", Balance: " + balance;
+    }
 
 
     //getter functions hier initialisieren
