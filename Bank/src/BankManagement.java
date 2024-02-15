@@ -107,31 +107,31 @@ public class BankManagement {
         return finalSum;
     }
 
-//    public void calculateDeposit(){
-//        for (Customer customer : customerList) {
-//            System.out.println("Customer: " + customer.name ); //java.lang.toString method, i overwrote it in Customer.java
-//        }
-//
-//        System.out.println("For which client do you want to make a deposit? Type here: ");
-//        String selectedUser = scanner.nextLine();
-//        System.out.println(selectedUser);
-//
-//        for (BankAccount account : bankAccountList) {
-//            if (account.getCustomer().getName().equals(selectedUser)){
-//                System.out.println("Balance: " + account.getBalance());
-//                double newBalance = enterDeposit(account.getBalance());
-//                System.out.println("updated balance: " + newBalance );
-//            }
-//        }
-//
-//    }
-//    public double enterDeposit(double balance) {
-//        System.out.println("please enter your deposit: ");
-//        double enteredNumber = scanner.nextDouble();
-//        double finalSum = balance + enteredNumber;
-//        return finalSum;
-//    }
-//
+    public void calculateDeposit(){
+        for (Customer customer : customerList) {
+            System.out.println("Customer: " + customer.name ); //java.lang.toString method, i overwrote it in Customer.java
+        }
+
+        System.out.println("For which client do you want to make a deposit? Type here: ");
+        String selectedUser = scanner.nextLine();
+        System.out.println(selectedUser);
+
+        for (BankAccount account : bankAccountList) {
+            if (account.getCustomer().getName().equals(selectedUser)){
+                System.out.println("Balance: " + account.getBalance());
+                double newBalance = enterDeposit(account.getBalance());
+                System.out.println("updated balance: " + newBalance );
+            }
+        }
+
+    }
+    public double enterDeposit(double balance) {
+        System.out.println("please enter your deposit: ");
+        double enteredNumber = scanner.nextDouble();
+        double finalSum = balance + enteredNumber;
+        return finalSum;
+    }
+
 
 
     //getters:
