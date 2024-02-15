@@ -41,6 +41,7 @@ public class Main {
                     bankMgmt.listClients();
                     break;
                 case "R":
+                    bankMgmt.deleteCustomer();
                     System.out.println("User pressed R");
                     break;
                 case "W":

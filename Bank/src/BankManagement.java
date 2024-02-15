@@ -53,6 +53,7 @@ public class BankManagement {
         return randomNumber.nextInt(5000); //number in () is the obergrenze zwischen 0 und dem wert
     }
 
+    public String getCustomer(){}
 
 
     public void listClients(){
@@ -132,7 +133,9 @@ public class BankManagement {
         return finalSum;
     }
 
-
+    public void deleteCustomer(){
+        System.out.println("");
+    }
 
     //getters:
     public ArrayList<Customer> getClientList() {
