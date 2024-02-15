@@ -44,10 +44,10 @@ public class Main {
                     System.out.println("User pressed R");
                     break;
                 case "W":
-                    System.out.println("User pressed W");
+                    bankMgmt.calculateWithdraw();
                     break;
                 case "D":
-                    System.out.println("User pressed D");
+                    bankMgmt.calculateDeposit();
                     break;
                 case "B":
                     bankMgmt.showBalanceForUser();
