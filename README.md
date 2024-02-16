@@ -1,2 +1,2 @@
 # BankManagement
-basic BancManagementTool
+basic BankManagementTool
