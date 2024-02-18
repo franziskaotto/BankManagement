@@ -53,7 +53,9 @@ public class BankManagement {
         return randomNumber.nextInt(5000); //number in () is the obergrenze zwischen 0 und dem wert
     }
 
-    public String getCustomer(){}
+//    public String getCustomer(){
+//
+//    }
 
 
     public void listClients(){
@@ -96,6 +98,7 @@ public class BankManagement {
             if (account.getCustomer().getName().equals(selectedUser)){
                 System.out.println("Balance: " + account.getBalance());
                 double newBalance = enterWithdraw(account.getBalance());
+                account.setBalance((int) newBalance);
                 System.out.println("updated balance: " + newBalance );
             }
         }
@@ -121,6 +124,7 @@ public class BankManagement {
             if (account.getCustomer().getName().equals(selectedUser)){
                 System.out.println("Balance: " + account.getBalance());
                 double newBalance = enterDeposit(account.getBalance());
+                account.setBalance((int)newBalance);
                 System.out.println("updated balance: " + newBalance );
             }
         }
